@@ -2,6 +2,8 @@ import React from "react";
 import ControlledLivePreview from "./exercises/forms/controlled-live-preview/controlledLivePreview";
 import UncontrolledLoginUseRef from "./exercises/forms/uncontrolled-login-useref/UncontrolledLoginUseRef";
 import Counter from "./exercises/hooks/counter-usestate/Counter";
+import FocusInput from "./exercises/hooks/use-ref-basics/FocusInput";
+import RenderCounter from "./exercises/hooks/use-ref-basics/RenderCounter";
 
 function App() {
   return (
@@ -14,6 +16,15 @@ function App() {
 
       <hr />
       <UncontrolledLoginUseRef />
+
+      <hr />
+      <Counter />
+
+      <hr />
+      <FocusInput />
+
+      <hr />
+      <RenderCounter />
 
       <hr />
       <Counter />

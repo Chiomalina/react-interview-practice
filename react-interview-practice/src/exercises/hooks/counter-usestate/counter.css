@@ -1,0 +1,17 @@
+
+
+.title {
+    font-size: 16px;
+    font-weight: 500;
+    color: black;
+}
+
+.btn {
+    color: black;
+    background-color: burlywood;
+}
+
+.btn:hover {
+    background-color: black;
+    color: bisque;
+}

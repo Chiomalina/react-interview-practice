@@ -21,7 +21,7 @@ function UncontrolledLoginUseRef() {
   }
 
   return (
-    <div style={{ padding: 16 }}>
+    <div>
       <h2>Uncontrolled Form (useRef)</h2>
 
       <form onSubmit={handleSubmit}>

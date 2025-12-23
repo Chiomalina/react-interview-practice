@@ -41,5 +41,66 @@ const [users, setUsers] = useState([]);
 const [Loading, setLoading] = useState(false);
 const [error, setError] = useState("");
 ````
-- users
+- users -> stores fetched data
+- Loading -> tracks API request state
+- error -> stores error messages
+
+
+### 2. Fetch on Component Mount
+
+```js
+useEffect(() => {
+  ...
+}, []);
+;
+````
+- Empty dependency array ensures the effect runs once
+- Equivalent to componenetDidMount
+
+
+### 3. AbortController for Cleanup
+
+```js
+const controller = new AbortController();
+;
+````
+- Prevents memory leaks
+- Avoids setting state on unmounted components
+
+## Cleanup function:
+```js
+return () => controller.abort();
+;
+```
+
+### 4. Async Fetch Logic
+
+```js
+const response = await fetch(url, {
+  signal: controller.signal,
+});
+;
+````
+- Uses try/catch/finally
+- Validates HTTP response
+- Safely parses JSON
+
+### 5. Error Handling
+
+```js
+catch (error) {
+  if (error.name === "AbortError") return;
+  setError(error.message);
+}
+````
+- Ignores intentional abort errors
+- Displays meaningful error messages
+
+## 🌐 API Used
+```js
+https://jsonplaceholder.typicode.com/users
+````
+A free fake REST API for testing and prtotyping
+
+
 

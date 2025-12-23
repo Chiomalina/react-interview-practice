@@ -4,6 +4,7 @@ import UncontrolledLoginUseRef from "./exercises/forms/uncontrolled-login-useref
 import Counter from "./exercises/hooks/counter-usestate/Counter";
 import FocusInput from "./exercises/hooks/use-ref-basics/FocusInput";
 import RenderCounter from "./exercises/hooks/use-ref-basics/RenderCounter";
+import UsersOnMount from "./exercises/hooks/use-effect/UseEffectFetchOnMount";
 
 function App() {
   return (
@@ -28,6 +29,9 @@ function App() {
 
       <hr />
       <Counter />
+
+      <hr />
+      <UsersOnMount />
     </main>
   );
 }

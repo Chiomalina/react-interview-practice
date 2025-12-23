@@ -28,7 +28,20 @@ It follows a **clean, interview-ready pattern** commonly expected in frontend ro
 
 ## 📂 File Structure
 
-## FetchOnMount.jsx
+```
+src/
+├── exercises/
+│   └── hooks/
+│       └── use-effect/
+│           ├── UseEffectFetchOnMount.jsx
+│           └── README.md
+│
+├── App.jsx
+├── main.jsx
+└── index.css
+```
+
+## UseEffectFetchOnMount.jsx
 
 ---
 
@@ -40,11 +53,11 @@ It follows a **clean, interview-ready pattern** commonly expected in frontend ro
 const [users, setUsers] = useState([]);
 const [Loading, setLoading] = useState(false);
 const [error, setError] = useState("");
-````
+```
+
 - users -> stores fetched data
 - Loading -> tracks API request state
 - error -> stores error messages
-
 
 ### 2. Fetch on Component Mount
 
@@ -53,24 +66,24 @@ useEffect(() => {
   ...
 }, []);
 ;
-````
+```
+
 - Empty dependency array ensures the effect runs once
 - Equivalent to componenetDidMount
-
 
 ### 3. AbortController for Cleanup
 
 ```js
 const controller = new AbortController();
-;
-````
+```
+
 - Prevents memory leaks
 - Avoids setting state on unmounted components
 
 ## Cleanup function:
+
 ```js
 return () => controller.abort();
-;
 ```
 
 ### 4. Async Fetch Logic
@@ -79,8 +92,8 @@ return () => controller.abort();
 const response = await fetch(url, {
   signal: controller.signal,
 });
-;
-````
+```
+
 - Uses try/catch/finally
 - Validates HTTP response
 - Safely parses JSON
@@ -92,15 +105,15 @@ catch (error) {
   if (error.name === "AbortError") return;
   setError(error.message);
 }
-````
+```
+
 - Ignores intentional abort errors
 - Displays meaningful error messages
 
 ## 🌐 API Used
+
 ```js
 https://jsonplaceholder.typicode.com/users
-````
+```
+
 A free fake REST API for testing and prtotyping
-
-
-

@@ -62,23 +62,19 @@ The component allows users to search through a list of users fetched from the JS
 
 The input field updates local state on every change.
 
-````js
-<input value={query} onChange={handleChange} />
-
-### 1️⃣ Controlled Input
-The input field updates local state on every change.
-
 ```js
 <input value={query} onChange={handleChange} />
+```
 
 ### 2️⃣ Debounced Effect
+
 The API call is delayed using setTimeout inside useEffect.
 
 ```js
 setTimeout(() => {
   runSearch();
 }, 400);
-````
+```
 
 ### 3️⃣ AbortController
 

@@ -6,6 +6,7 @@ import FocusInput from "./exercises/hooks/use-ref-basics/FocusInput";
 import RenderCounter from "./exercises/hooks/use-ref-basics/RenderCounter";
 import UsersOnMount from "./exercises/hooks/use-effect/UseEffectFetchOnMount/UseEffectFetchOnMount";
 import UseEffectSearchUsersDebounced from "./exercises/hooks/use-effect/UseEffectSearchUsersDebounced/UseEffectSearchUsersDebounced";
+import TypeWriterEffect from "./exercises/hooks/use-effect/TypeWriterEffect/TypeWriterEffect";
 
 function App() {
   return (
@@ -36,6 +37,9 @@ function App() {
 
       <hr />
       <UseEffectSearchUsersDebounced />
+
+      <hr />
+      <TypeWriterEffect />
     </main>
   );
 }

@@ -1,22 +1,16 @@
 import React, { useState } from "react";
+interface Props {
+  countries: string[];
+  heading: string;
+}
 
-function listGroup() {
-  let countries = [
-    "Nigeria",
-    "Cameroun",
-    "Ghana",
-    "Ivory-Coast",
-    "Bokina-Faso",
-    "Nigel",
-    "Mali",
-  ];
-
+function listGroup({ countries, heading }: Props) {
   const [selectedIndex, setSelectedIndex] = useState(-1);
 
   return (
     <div>
       <ul className="list-group">
-        <h1>List</h1>
+        <h1>{heading}</h1>
         {countries.map((country, index) => (
           <li
             key={index}

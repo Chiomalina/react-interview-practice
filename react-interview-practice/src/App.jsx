@@ -10,6 +10,15 @@ import TypeWriterEffect from "./exercises/hooks/use-effect/TypeWriterEffect/Type
 import ListGroup from "./exercises/list-group/ListGroup.tsx";
 
 function App() {
+  let countries = [
+    "Nigeria",
+    "Cameroun",
+    "Ghana",
+    "Ivory-Coast",
+    "Bokina-Faso",
+    "Nigel",
+    "Mali",
+  ];
   return (
     <main style={{ fontFamily: "system-ui", padding: 20 }}>
       <h1>React Interview Practice</h1>
@@ -43,7 +52,7 @@ function App() {
       <TypeWriterEffect />
 
       <hr />
-      <ListGroup />
+      <ListGroup countries={countries} heading={"Cities"} />
     </main>
   );
 }

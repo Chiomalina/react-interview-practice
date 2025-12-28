@@ -7,6 +7,7 @@ import RenderCounter from "./exercises/hooks/use-ref-basics/RenderCounter";
 import UsersOnMount from "./exercises/hooks/use-effect/UseEffectFetchOnMount/UseEffectFetchOnMount";
 import UseEffectSearchUsersDebounced from "./exercises/hooks/use-effect/UseEffectSearchUsersDebounced/UseEffectSearchUsersDebounced";
 import TypeWriterEffect from "./exercises/hooks/use-effect/TypeWriterEffect/TypeWriterEffect";
+import ListGroup from "./exercises/list-group/ListGroup.tsx";
 
 function App() {
   return (
@@ -40,6 +41,9 @@ function App() {
 
       <hr />
       <TypeWriterEffect />
+
+      <hr />
+      <ListGroup />
     </main>
   );
 }

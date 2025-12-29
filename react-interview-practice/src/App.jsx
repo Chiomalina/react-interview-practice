@@ -8,6 +8,7 @@ import UsersOnMount from "./exercises/hooks/use-effect/UseEffectFetchOnMount/Use
 import UseEffectSearchUsersDebounced from "./exercises/hooks/use-effect/UseEffectSearchUsersDebounced/UseEffectSearchUsersDebounced";
 import TypeWriterEffect from "./exercises/hooks/use-effect/TypeWriterEffect/TypeWriterEffect";
 import ListGroup from "./exercises/list-group/ListGroup.tsx";
+import BlinkingCursor from "./exercises/hooks/use-effect/BlinkingCursor/BlinkingCursor.jsx";
 
 function App() {
   let countries = [
@@ -53,6 +54,9 @@ function App() {
 
       <hr />
       <ListGroup countries={countries} heading={"Cities"} />
+
+      <hr />
+      <BlinkingCursor />
     </main>
   );
 }

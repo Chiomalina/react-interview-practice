@@ -28,7 +28,7 @@ export default function BlinkingCursor({ text = "Hello world!", speed = 800 }) {
   useEffect(() => {
     const intervalId = window.setInterval(() => {
       setShowCursor((prev) => !prev);
-    }, 5000);
+    }, 650);
 
     return () => window.clearInterval(intervalId);
   }, []);

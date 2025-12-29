@@ -12,14 +12,14 @@ function BlinkingCursor({ text = "Hello Chioma", speed = 80 }) {
       setIndex((prev) => prev + 1);
     }, speed);
 
-    // cancel the timeout
+    // cleanup timeout
     return () => window.clearTimeout(timeoutId);
-  }, [text, speed, index]);
+  }, [text, speed, isDone, index]);
 
   return (
     <div>
       <span>{text.slice(0, index)}</span>
-      <span style={{ marginLeft: 2 }}>|</span>
+      <span>|</span>
     </div>
   );
 }

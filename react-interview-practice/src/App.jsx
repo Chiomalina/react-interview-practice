@@ -9,6 +9,8 @@ import UseEffectSearchUsersDebounced from "./exercises/hooks/use-effect/UseEffec
 import TypeWriterEffect from "./exercises/hooks/use-effect/TypeWriterEffect/TypeWriterEffect";
 import ListGroup from "./exercises/list-group/ListGroup.tsx";
 import BlinkingCursor from "./exercises/hooks/use-effect/BlinkingCursor/BlinkingCursor.jsx";
+import LiveCoding from "./exercises/LiveCoding/LiveCoding.jsx";
+import Variable from "./exercises/variable.jsx";
 
 function App() {
   let countries = [
@@ -24,6 +26,10 @@ function App() {
     <main style={{ fontFamily: "system-ui", padding: 20 }}>
       <h1>React Interview Practice</h1>
       <p>Small focused exercises with short explanations</p>
+
+      <hr />
+      <br />
+      <LiveCoding />
 
       <hr />
       <ControlledLivePreview />
@@ -57,6 +63,9 @@ function App() {
 
       <hr />
       <BlinkingCursor />
+
+      <hr />
+      <Variable />
     </main>
   );
 }

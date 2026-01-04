@@ -11,7 +11,7 @@ function LiveCoding() {
   function guardFunction(users) {
     if (!Array.isArray(users)) {
       console.log("Expected an array");
-      throw new Error("Expected an array");
+      //throw new Error("Expected an array");
     }
     return "Thanks";
   }

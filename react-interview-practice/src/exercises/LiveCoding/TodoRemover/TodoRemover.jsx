@@ -1,75 +1,53 @@
 import React, { useState } from "react";
-import "./TodoRemover.css";
 
 function TodoRemover() {
-  // 1) State for todos (each todo has a stable id + text)
+  // Set todos state and initialize with a list of few items
   const [todos, setTodos] = useState([
-    { id: 1, text: "Learn filter() method" },
-    { id: 2, text: "Build a todo app" },
-    { id: 3, text: "Prepare for interviews" },
+    { id: 1, text: "Practice interview questions" },
+    { id: 2, text: "Set a reminder for family call" },
+    { id: 3, text: "Send a confirmation e-mail" },
   ]);
 
-  // 2) State for input text
+  // set text state and initialzed to an empty string
   const [text, setText] = useState("");
 
-  // 3) Add todo (immutable)
-  function handleAdd() {
-    const trimmed = text.trim();
-    if (!trimmed) return;
+  function handleChange(event) {
+    event.preventDefault();
+    setText(event.target.value);
 
-    // Generate a simple id
-    const newTodo = { id: Date.now(), text: trimmed };
-
-    // Functional update avoids stale state
-    setTodos((prev) => [...prev, newTodo]);
-
-    // Clear input
+    // clean up text
     setText("");
   }
 
-  // 4) Remove todo by id (immutable)
-  function handleRemove(id) {
-    // filter() returns a NEW array, does not mutate
-    setTodos((prev) => prev.filter((todo) => todo.id !== id));
+  function handleAdd(id) {
+    const trimmedText = text.trim();
+    if (!trimmedText) return;
+
+    const newText = { id: Date.now, text: trimmedText };
+    setTodos((prev) => [...prev, newText]);
   }
 
-  // 5) handle onChange to set Text
-  function handleOnChange(event) {
-    setText(event.target.value);
+  function handleRemove(id) {
+    setTodos((prev) => prev.filter((todo) => todo.id !== id));
   }
 
   return (
     <div className="todo-container">
-      <h2>Todo Remover</h2>
+      <h1>Todo Remover</h1>
 
-      {/** Add section */}
-      <div className="todo-add-section">
+      <div>
+        {/**Manage text update */}
         <input
           type="text"
-          className="todo-input"
           value={text}
-          placeholder="Add a todo"
-          onChange={handleOnChange}
-        />{" "}
+          placeholder="Type your todos here."
+          onClick={handleChange}
+        />
+
         <button onClick={handleAdd}>Add</button>
       </div>
 
-      {/**List section */}
-      <ol className="todo-list-section">
-        {todos.length === 0 ? (
-          <p>Congratulations, you have No todos left🎉</p>
-        ) : (
-          todos.map((todo) => (
-            // Use stable id as key not index because index can change
-            <li key={todo.id} className="todo-list-item">
-              <span>{todo.text}</span>{" "}
-              <button onClick={() => handleRemove(todo.id)}>Remove</button>
-            </li>
-          ))
-        )}
-      </ol>
+      {/** Manage Removal button */}
     </div>
   );
 }
-
-export default TodoRemover;

@@ -60,7 +60,7 @@ function TodoRemover() {
           <p>Congratulations, you have No todos left🎉</p>
         ) : (
           todos.map((todo) => (
-            // USe stable id as key not index because index can change
+            // Use stable id as key not index because index can change
             <li key={todo.id} className="todo-list-item">
               <span>{todo.text}</span>{" "}
               <button onClick={() => handleRemove(todo.id)}>Remove</button>

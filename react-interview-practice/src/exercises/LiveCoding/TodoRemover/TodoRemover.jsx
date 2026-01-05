@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import "./TodoRemover.css";
 
 function TodoRemover() {
   // 1) State for todos (each todo has a stable id + text)
@@ -54,7 +55,7 @@ function TodoRemover() {
       </div>
 
       {/**List section */}
-      <ul className="todo-list-section">
+      <ol className="todo-list-section">
         {todos.length === 0 ? (
           <p>Congratulations, you have No todos left🎉</p>
         ) : (
@@ -66,7 +67,7 @@ function TodoRemover() {
             </li>
           ))
         )}
-      </ul>
+      </ol>
     </div>
   );
 }

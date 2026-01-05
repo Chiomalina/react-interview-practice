@@ -1,16 +1,6 @@
 import React from "react";
-import ControlledLivePreview from "./exercises/forms/controlled-live-preview/controlledLivePreview";
-import UncontrolledLoginUseRef from "./exercises/forms/uncontrolled-login-useref/UncontrolledLoginUseRef";
-import Counter from "./exercises/hooks/counter-usestate/Counter";
-import FocusInput from "./exercises/hooks/use-ref-basics/FocusInput";
-import RenderCounter from "./exercises/hooks/use-ref-basics/RenderCounter";
-import UsersOnMount from "./exercises/hooks/use-effect/UseEffectFetchOnMount/UseEffectFetchOnMount";
-import UseEffectSearchUsersDebounced from "./exercises/hooks/use-effect/UseEffectSearchUsersDebounced/UseEffectSearchUsersDebounced";
-import TypeWriterEffect from "./exercises/hooks/use-effect/TypeWriterEffect/TypeWriterEffect";
-import ListGroup from "./exercises/list-group/ListGroup.tsx";
-import BlinkingCursor from "./exercises/hooks/use-effect/BlinkingCursor/BlinkingCursor.jsx";
 import LiveCoding from "./exercises/LiveCoding/LiveCoding.jsx";
-import Variable from "./exercises/variable.jsx";
+import TodoRemover from "./exercises/LiveCoding/TodoRemover/TodoRemover.jsx";
 
 function App() {
   let countries = [
@@ -32,40 +22,8 @@ function App() {
       <LiveCoding />
 
       <hr />
-      <ControlledLivePreview />
-
-      <hr />
-      <UncontrolledLoginUseRef />
-
-      <hr />
-      <Counter />
-
-      <hr />
-      <FocusInput />
-
-      <hr />
-      <RenderCounter />
-
-      <hr />
-      <Counter />
-
-      <hr />
-      <UsersOnMount />
-
-      <hr />
-      <UseEffectSearchUsersDebounced />
-
-      <hr />
-      <TypeWriterEffect />
-
-      <hr />
-      <ListGroup countries={countries} heading={"Cities"} />
-
-      <hr />
-      <BlinkingCursor />
-
-      <hr />
-      <Variable />
+      <br />
+      <TodoRemover />
     </main>
   );
 }

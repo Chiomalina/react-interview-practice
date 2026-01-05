@@ -1,19 +1,16 @@
-import { Toast } from "bootstrap";
 import { useState } from "react";
 
 function TodoRemover() {
-  // Set todos state and initialize with a list of few items
   const [todos, setTodos] = useState([
-    { id: 1, text: "Practice interview questions" },
-    { id: 2, text: "Set a reminder for family call" },
-    { id: 3, text: "Send a confirmation e-mail" },
+    { id: 1, text: "Prepare for live coding" },
+    { id: 2, text: "Braid Mama's hair" },
+    { id: 3, text: "Commence internship" },
   ]);
 
-  // set text state and initialzed to an empty string
   const [text, setText] = useState("");
 
   function handleChange(event) {
-    event.preventDefault;
+    event.preventDefault();
     setText(event.target.value);
   }
 
@@ -21,48 +18,46 @@ function TodoRemover() {
     const trimmedText = text.trim();
     if (!trimmedText) return;
 
-    const newText = { id: Date.now(), text: trimmedText };
-    setTodos((prev) => [...prev, newText]);
+    const newTodo = { id: Date.now(), text: trimmedText };
 
-    // clean up text
+    setTodos((prev) => [...prev, newTodo]);
+
+    // Clear text from input
     setText("");
-    alert(`Todo witht the id ${newText.id} has been successfully added`);
   }
 
   function handleRemove(id) {
     setTodos((prev) => prev.filter((todo) => todo.id !== id));
-    alert(`todo with the id ${id} has been sucessfully deleted`);
   }
 
   return (
-    <div className="todo-container">
-      <h1>Todo Remover</h1>
+    <div>
+      <h1>ToDo Remover</h1>
 
-      <div>
-        {/**Manage text update */}
+      <div className="todo-input">
         <input
           type="text"
           value={text}
-          placeholder="Type your todos here."
           onChange={handleChange}
+          placeholder="Type your todos"
         />
-
-        <button onClick={() => handleAdd()}>Add</button>
+        <button onClick={handleAdd}>Add</button>
       </div>
 
-      {/** Manage Removal button */}
-      {todos.length == 0 ? (
-        <p>You have no todo's</p>
-      ) : (
-        <ul>
-          {todos.map((todo) => (
-            <div>
-              <li key={todo.id}>{todo.text}</li>{" "}
-              <button onClick={() => handleRemove(todo.id)}>Remove</button>
-            </div>
-          ))}
-        </ul>
-      )}
+      <div className="todos-list">
+        {todos.length == 0 ? (
+          <p>You have no todo task left</p>
+        ) : (
+          <ul>
+            {todos.map((todo) => (
+              <li key={todo.id}>
+                <span>{todo.text}</span>
+                <button onClick={() => handleRemove(todo.id)}>Remove</button>
+              </li>
+            ))}
+          </ul>
+        )}
+      </div>
     </div>
   );
 }

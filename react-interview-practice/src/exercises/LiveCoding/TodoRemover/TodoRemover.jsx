@@ -49,8 +49,7 @@ function TodoRemover() {
           value={text}
           placeholder="Add a todo"
           onChange={handleOnChange}
-        />
-
+        />{" "}
         <button onClick={handleAdd}>Add</button>
       </div>
 
@@ -63,7 +62,7 @@ function TodoRemover() {
             // USe stable id as key not index because index can change
             <li key={todo.id} className="todo-list-item">
               <span>{todo.text}</span>{" "}
-              <button onClick={handleRemove(todo.id)}>Remove</button>
+              <button onClick={() => handleRemove(todo.id)}>Remove</button>
             </li>
           ))
         )}

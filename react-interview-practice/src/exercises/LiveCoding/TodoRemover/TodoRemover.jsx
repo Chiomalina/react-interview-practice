@@ -5,6 +5,7 @@ function TodoRemover() {
     { id: 1, text: "Prepare for live coding" },
     { id: 2, text: "Braid Mama's hair" },
     { id: 3, text: "Commence internship" },
+    { id: 4, text: "Python fee renewal" },
   ]);
 
   const [text, setText] = useState("");

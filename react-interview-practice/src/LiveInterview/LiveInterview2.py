@@ -1,0 +1,1 @@
+# Write a function that rotates a list to the right by `k` steps, where `k` is a non-negative integer.

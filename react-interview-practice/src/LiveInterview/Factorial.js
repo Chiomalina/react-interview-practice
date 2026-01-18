@@ -1,4 +1,4 @@
-
+// Also implement with Python(Todo)
 function factorial(number) {
   if(number < 0) {
     return
